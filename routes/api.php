@@ -25,6 +25,7 @@ Route::group(['middleware' => 'auth'], function($routes){
         Route::get('/{task}', [TaskController::class, 'show']); // Get a single task
         Route::put('/{task}', [TaskController::class, 'update']); // Update a task
         Route::delete('/{task}', [TaskController::class, 'destroy']); // Delete a task
+        Route::get('/search', [TaskController::class, 'search']); // Search tasks
     });
 
 });

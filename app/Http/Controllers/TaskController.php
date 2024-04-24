@@ -162,4 +162,28 @@ class TaskController extends Controller
 
         return response()->json(['message' => 'Task deleted successfully']);
     }
+
+
+    public function search(Request $request)
+    {
+        try {
+            $query = Task::where('user_id', auth()->id());
+
+            if ($request->has('search')) {
+                $searchTerm = $request->search;
+                $query->where(function ($query) use ($searchTerm) {
+                    $query->orWhere('title', 'like', '%' . $searchTerm . '%');
+                    $query->orWhere('description', 'like', '%' . $searchTerm . '%');
+                    $query->orWhere('due_date', 'like', '%' . $searchTerm . '%');
+                    $query->orWhere('priority', 'like', '%' . $searchTerm . '%');
+                });
+            }
+
+            $tasks = $query->orderBy('created_at')->limit(100)->get();
+
+            return response()->json(['message' => 'List fetched successfully', 'tasks' => $tasks], 200);
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Internal Server Error', 'message' => $e->getMessage()], 500);
+        }
+    }
 }
