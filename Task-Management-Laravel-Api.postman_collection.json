@@ -1,0 +1,643 @@
+{
+	"info": {
+		"_postman_id": "4ee68dbd-efd8-4a66-97f6-65042d87997f",
+		"name": "Task-Management-Laravel-Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31614458"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"superadmin@example.com\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "me",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MTM5NDI4ODQsImV4cCI6MTcxNDAyOTI4NCwibmJmIjoxNzEzOTQyODg0LCJqdGkiOiJRaFAwcllvNlFwbDdLa0w1Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.QjCE-YCVPJxfqDll2atccL24cYae6zQmfzniYIR0Boc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"superadmin@example.com\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/me",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MTM1MDQ3OTMsImV4cCI6MTcxMzU5MTE5MywibmJmIjoxNzEzNTA0NzkzLCJqdGkiOiI2aTh6SEtMOTBudTFIdWJCIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.LtNkKNRJdfUbERL1pRSXfZ6izzEcv-h8wOFHRS8a7_4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"superadmin@example.com\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/logout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "store",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MTM5NDM0ODQsImV4cCI6MTcxNDAyOTg4NCwibmJmIjoxNzEzOTQzNDg0LCJqdGkiOiJ5aTFIR0c5bzU0bVJ5a0k0Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.u-WElJaFAOwOMfVjNKPj4Miy_kMnEb9HaQ7AM9mY-0s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Prepare Presentation\",\r\n    \"description\": \"Prepare a presentation for tomorrow's client meeting.\",\r\n    \"due_date\": \"2024-04-25T09:00:00\",\r\n    \"priority\": \"high\",\r\n    \"completed\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/tasks/add",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"add"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "store",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\": 1,\r\n    \"title\": \"Finish Report\",\r\n    \"description\": \"Write a detailed report on the project progress.\",\r\n    \"due_date\": \"2024-04-30T12:00:00\",\r\n    \"priority\": \"high\",\r\n    \"completed\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/tasks/tasks",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"tasks",
+										"tasks"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Apr 2024 07:44:20 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Apr 2024 07:44:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Task created successfully\",\n    \"task\": {\n        \"title\": \"Finish Report\",\n        \"description\": \"Write a detailed report on the project progress.\",\n        \"due_date\": \"2024-04-30T12:00:00.000000Z\",\n        \"priority\": \"high\",\n        \"user_id\": 1,\n        \"updated_at\": \"2024-04-24T07:44:20.000000Z\",\n        \"created_at\": \"2024-04-24T07:44:20.000000Z\",\n        \"id\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MTM5NDM0ODQsImV4cCI6MTcxNDAyOTg4NCwibmJmIjoxNzEzOTQzNDg0LCJqdGkiOiJ5aTFIR0c5bzU0bVJ5a0k0Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.u-WElJaFAOwOMfVjNKPj4Miy_kMnEb9HaQ7AM9mY-0s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Update Presentation\",\r\n    \"description\": \"Prepare a presentation for tomorrow's client meeting.\",\r\n    \"due_date\": \"2024-04-25T09:00:00\",\r\n    \"priority\": \"high\",\r\n    \"completed\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/tasks/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Update Presentation\",\r\n    \"description\": \"Prepare a presentation for tomorrow's client meeting.\",\r\n    \"due_date\": \"2024-04-25T09:00:00\",\r\n    \"priority\": \"high\",\r\n    \"completed\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/tasks/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"tasks",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Apr 2024 11:21:28 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Apr 2024 11:21:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Task updated successfully\",\n    \"task\": {\n        \"user_id\": 1,\n        \"title\": \"Update Presentation\",\n        \"description\": \"Prepare a presentation for tomorrow's client meeting.\",\n        \"due_date\": \"2024-04-25T09:00:00\",\n        \"priority\": \"high\",\n        \"completed\": true,\n        \"created_at\": \"2024-04-24T07:44:20.000000Z\",\n        \"updated_at\": \"2024-04-24T11:21:28.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "show",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MTM5NDM0ODQsImV4cCI6MTcxNDAyOTg4NCwibmJmIjoxNzEzOTQzNDg0LCJqdGkiOiJ5aTFIR0c5bzU0bVJ5a0k0Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.u-WElJaFAOwOMfVjNKPj4Miy_kMnEb9HaQ7AM9mY-0s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/tasks/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MTM5NDM0ODQsImV4cCI6MTcxNDAyOTg4NCwibmJmIjoxNzEzOTQzNDg0LCJqdGkiOiJ5aTFIR0c5bzU0bVJ5a0k0Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.u-WElJaFAOwOMfVjNKPj4Miy_kMnEb9HaQ7AM9mY-0s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/tasks/list",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/tasks/list",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"tasks",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Apr 2024 11:01:16 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Apr 2024 11:01:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"tasks\": [\n        {\n            \"user_id\": 1,\n            \"title\": \"Prepare Presentation\",\n            \"description\": \"Prepare a presentation for tomorrow's client meeting.\",\n            \"due_date\": \"2024-04-25 09:00:00\",\n            \"priority\": \"high\",\n            \"completed\": 0,\n            \"created_at\": \"2024-04-24T11:00:00.000000Z\",\n            \"updated_at\": \"2024-04-24T11:00:00.000000Z\"\n        },\n        {\n            \"user_id\": 1,\n            \"title\": \"Prepare Presentation\",\n            \"description\": \"Prepare a presentation for tomorrow's client meeting.\",\n            \"due_date\": \"2024-04-25 09:00:00\",\n            \"priority\": \"high\",\n            \"completed\": 0,\n            \"created_at\": \"2024-04-24T10:59:28.000000Z\",\n            \"updated_at\": \"2024-04-24T10:59:28.000000Z\"\n        },\n        {\n            \"user_id\": 1,\n            \"title\": \"Prepare Presentation\",\n            \"description\": \"Prepare a presentation for tomorrow's client meeting.\",\n            \"due_date\": \"2024-04-25 09:00:00\",\n            \"priority\": \"high\",\n            \"completed\": 0,\n            \"created_at\": \"2024-04-24T10:59:09.000000Z\",\n            \"updated_at\": \"2024-04-24T10:59:09.000000Z\"\n        },\n        {\n            \"user_id\": 1,\n            \"title\": \"Prepare Presentation\",\n            \"description\": \"Prepare a presentation for tomorrow's client meeting.\",\n            \"due_date\": \"2024-04-25 09:00:00\",\n            \"priority\": \"high\",\n            \"completed\": 0,\n            \"created_at\": \"2024-04-24T10:56:08.000000Z\",\n            \"updated_at\": \"2024-04-24T10:56:08.000000Z\"\n        },\n        {\n            \"user_id\": 1,\n            \"title\": \"Send Email Reminder\",\n            \"description\": \"Send a reminder email to all team members about the upcoming meeting.\",\n            \"due_date\": \"2024-04-24 17:00:00\",\n            \"priority\": \"medium\",\n            \"completed\": 0,\n            \"created_at\": \"2024-04-24T10:53:26.000000Z\",\n            \"updated_at\": \"2024-04-24T10:53:26.000000Z\"\n        },\n        {\n            \"user_id\": 1,\n            \"title\": \"Send Email Reminder\",\n            \"description\": \"Send a reminder email to all team members about the upcoming meeting.\",\n            \"due_date\": \"2024-04-24 17:00:00\",\n            \"priority\": \"medium\",\n            \"completed\": 0,\n            \"created_at\": \"2024-04-24T10:52:10.000000Z\",\n            \"updated_at\": \"2024-04-24T10:52:10.000000Z\"\n        },\n        {\n            \"user_id\": 1,\n            \"title\": \"Finish Report\",\n            \"description\": \"Write a detailed report on the project progress.\",\n            \"due_date\": \"2024-04-30 12:00:00\",\n            \"priority\": \"high\",\n            \"completed\": 0,\n            \"created_at\": \"2024-04-24T07:44:20.000000Z\",\n            \"updated_at\": \"2024-04-24T07:44:20.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MTM5NDM0ODQsImV4cCI6MTcxNDAyOTg4NCwibmJmIjoxNzEzOTQzNDg0LCJqdGkiOiJ5aTFIR0c5bzU0bVJ5a0k0Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.u-WElJaFAOwOMfVjNKPj4Miy_kMnEb9HaQ7AM9mY-0s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/tasks/7",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MTM5NDI4ODQsImV4cCI6MTcxNDAyOTI4NCwibmJmIjoxNzEzOTQyODg0LCJqdGkiOiJRaFAwcllvNlFwbDdLa0w1Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.QjCE-YCVPJxfqDll2atccL24cYae6zQmfzniYIR0Boc",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}
